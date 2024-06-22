@@ -1,4 +1,4 @@
-export default function Room() {
+export default function Participant() {
   return (
     <div>hello world!</div>
   );
