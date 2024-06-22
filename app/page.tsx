@@ -129,7 +129,11 @@ export default function Index() {
   )
 }
 
-function BarChartIcon(props) {
+type Props = {
+  className: string;
+};
+
+function BarChartIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -151,7 +155,7 @@ function BarChartIcon(props) {
 }
 
 
-function LinkIcon(props) {
+function LinkIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -172,7 +176,7 @@ function LinkIcon(props) {
 }
 
 
-function MenuIcon(props) {
+function MenuIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -194,7 +198,7 @@ function MenuIcon(props) {
 }
 
 
-function PlayIcon(props) {
+function PlayIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -214,7 +218,7 @@ function PlayIcon(props) {
 }
 
 
-function PlusIcon(props) {
+function PlusIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -235,7 +239,7 @@ function PlusIcon(props) {
 }
 
 
-function PuzzleIcon(props) {
+function PuzzleIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -255,7 +259,7 @@ function PuzzleIcon(props) {
 }
 
 
-function SettingsIcon(props) {
+function SettingsIcon(props: Props) {
   return (
     <svg
       {...props}
@@ -276,7 +280,7 @@ function SettingsIcon(props) {
 }
 
 
-function SmartphoneIcon(props) {
+function SmartphoneIcon(props: Props) {
   return (
     <svg
       {...props}
