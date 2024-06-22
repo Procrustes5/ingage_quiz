@@ -6,7 +6,6 @@
 'use client'
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 
 export default function MasterIndex() {
   return (
@@ -40,9 +39,9 @@ export default function MasterIndex() {
           <div className="bg-background rounded-lg shadow-md p-6">
             <h2 className="text-xl font-bold mb-4">Create a Room</h2>
             <p className="text-muted-foreground mb-6">Create a new quiz room for your players to join.</p>
-            <Button className="w-full" size="lg" onClick={() => (window.location.href = "/create-room")}>
+            <button className="w-full" onClick={() => (window.location.href = "/create-room")}>
               Create Room
-            </Button>
+            </button>
           </div>
           <div className="bg-background rounded-lg shadow-md p-6">
             <h2 className="text-xl font-bold mb-4">Manage Rooms</h2>
@@ -55,12 +54,12 @@ export default function MasterIndex() {
                     <p className="text-sm text-muted-foreground">10 questions, 5 minutes</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="icon" className="hover:bg-accent hover:text-accent-foreground">
+                    <button className="hover:bg-accent hover:text-accent-foreground">
                       <FilePenIcon className="w-5 h-5" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="hover:bg-accent hover:text-accent-foreground">
+                    </button>
+                    <button className="hover:bg-accent hover:text-accent-foreground">
                       <TrashIcon className="w-5 h-5" />
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -71,12 +70,12 @@ export default function MasterIndex() {
                     <p className="text-sm text-muted-foreground">15 questions, 10 minutes</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="icon" className="hover:bg-accent hover:text-accent-foreground">
+                    <button className="hover:bg-accent hover:text-accent-foreground">
                       <FilePenIcon className="w-5 h-5" />
-                    </Button>
-                    <Button variant="ghost" size="icon" className="hover:bg-accent hover:text-accent-foreground">
+                    </button>
+                    <button className="hover:bg-accent hover:text-accent-foreground">
                       <TrashIcon className="w-5 h-5" />
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>

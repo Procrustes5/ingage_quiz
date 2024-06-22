@@ -18,10 +18,6 @@ To read more about using these font, please visit the Next.js documentation:
 - Pages Directory: https://nextjs.org/docs/pages/building-your-application/optimizing/fonts
 **/
 import Link from "next/link"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
 
 export default function masterCreateRoom() {
   return (
@@ -43,25 +39,25 @@ export default function masterCreateRoom() {
             <h2 className="text-xl font-semibold mb-4 text-[#d42f2f]">Room Details</h2>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="roomName" className="block mb-1">
+                <label htmlFor="roomName" className="block mb-1">
                   Room Name
-                </Label>
-                <Input id="roomName" placeholder="Enter room name" />
+                </label>
+                <input id="roomName" placeholder="Enter room name" />
               </div>
               <div>
-                <Label htmlFor="description" className="block mb-1">
+                <label htmlFor="description" className="block mb-1">
                   Description
-                </Label>
-                <Textarea id="description" placeholder="Enter room description" rows={3} />
+                </label>
+                <textarea id="description" placeholder="Enter room description" rows={3} />
               </div>
             </div>
           </div>
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-semibold mb-4 text-[#d42f2f]">Add Quiz Questions</h2>
             <div className="space-y-4">
-              <Button variant="solid" className="bg-[#d42f2f] hover:bg-[#c22b2b] text-white">
+              <button className="bg-[#d42f2f] hover:bg-[#c22b2b] text-white">
                 Add Multiple Choice Question
-              </Button>
+              </button>
               <div>
                 <h3 className="text-lg font-semibold mb-2">Added Questions</h3>
                 <ul className="space-y-2">
@@ -71,37 +67,37 @@ export default function masterCreateRoom() {
                       <div className="mt-2 space-x-4">
                         <div className="flex items-center">
                           <input type="radio" id="option1" name="option" className="mr-2" />
-                          <Label htmlFor="option1" className="text-sm">
+                          <label htmlFor="option1" className="text-sm">
                             Paris
-                          </Label>
+                          </label>
                         </div>
                         <div className="flex items-center">
                           <input type="radio" id="option2" name="option" className="mr-2" />
-                          <Label htmlFor="option2" className="text-sm">
+                          <label htmlFor="option2" className="text-sm">
                             Berlin
-                          </Label>
+                          </label>
                         </div>
                         <div className="flex items-center">
                           <input type="radio" id="option3" name="option" className="mr-2" />
-                          <Label htmlFor="option3" className="text-sm">
+                          <label htmlFor="option3" className="text-sm">
                             London
-                          </Label>
+                          </label>
                         </div>
                         <div className="flex items-center">
                           <input type="radio" id="option4" name="option" className="mr-2" />
-                          <Label htmlFor="option4" className="text-sm">
+                          <label htmlFor="option4" className="text-sm">
                             Madrid
-                          </Label>
+                          </label>
                         </div>
                       </div>
                     </div>
                     <div className="flex space-x-2">
-                      <Button variant="outline" className="text-[#d42f2f] hover:bg-[#d42f2f] hover:text-white">
+                      <button className="text-[#d42f2f] hover:bg-[#d42f2f] hover:text-white">
                         Edit
-                      </Button>
-                      <Button variant="outline" className="text-[#d42f2f] hover:bg-[#d42f2f] hover:text-white">
+                      </button>
+                      <button className="text-[#d42f2f] hover:bg-[#d42f2f] hover:text-white">
                         Remove
-                      </Button>
+                      </button>
                     </div>
                   </li>
                 </ul>
