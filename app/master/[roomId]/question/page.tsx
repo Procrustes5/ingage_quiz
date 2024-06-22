@@ -26,18 +26,20 @@ export default function Component() {
         </div>
       </main>
       <footer className="flex items-center justify-between px-8 py-4 border-t">
-        {/* <Button variant="ghost" size="lg">
+        <div className="px-4 py-2 rounded bg-gray-200 text-gray-700">
           End Quiz
-        </Button>
+        </div>
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="lg">
+          <div className="px-4 py-2 rounded bg-gray-200 text-gray-700">
             Previous
-          </Button>
-          <Button size="lg">Next Question</Button>
-          <Button variant="ghost" size="lg">
+          </div>
+          <div className="px-4 py-2 rounded bg-blue-500 text-white">
+            Next Question
+          </div>
+          <div className="px-4 py-2 rounded bg-gray-200 text-gray-700">
             View Results
-          </Button>
-        </div> */}
+          </div>
+        </div>
       </footer>
     </div>
   )
@@ -62,7 +64,6 @@ function ClockIcon(props) {
     </svg>
   )
 }
-
 
 function PuzzleIcon(props) {
   return (
