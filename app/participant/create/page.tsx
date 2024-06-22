@@ -1,5 +1,3 @@
 export default function ParticipantCreate() {
-  return (
-    <div></div>
-  )
+  return <div></div>
 }

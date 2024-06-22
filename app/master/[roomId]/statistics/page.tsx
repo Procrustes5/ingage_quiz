@@ -10,64 +10,74 @@
 
 export default function Component() {
   return (
-    <div className="w-full max-w-6xl mx-auto py-12 px-4 md:px-6">
-      <div className="flex flex-col gap-8">
-        <div className="bg-[#d42f2f] rounded-lg p-6 text-white text-center">
-          <h1 className="text-3xl font-bold">General Knowledge Quiz</h1>
-          <h2 className="text-2xl font-semibold mt-2">Question 12</h2>
+    <div className='w-full max-w-6xl mx-auto py-12 px-4 md:px-6'>
+      <div className='flex flex-col gap-8'>
+        <div className='bg-[#d42f2f] rounded-lg p-6 text-white text-center'>
+          <h1 className='text-3xl font-bold'>General Knowledge Quiz</h1>
+          <h2 className='text-2xl font-semibold mt-2'>Question 12</h2>
         </div>
-        <div className="bg-background rounded-lg p-6">
-          <h3 className="text-2xl font-bold mb-4">What is the capital city of Australia?</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="bg-red-100 border-2 border-red-500 rounded-lg p-4 flex flex-col gap-2">
-              <div className="text-lg font-semibold">A. Sydney</div>
-              <div className="text-sm text-muted-foreground">25%</div>
+        <div className='bg-background rounded-lg p-6'>
+          <h3 className='text-2xl font-bold mb-4'>
+            What is the capital city of Australia?
+          </h3>
+          <div className='grid grid-cols-2 gap-4'>
+            <div className='bg-red-100 border-2 border-red-500 rounded-lg p-4 flex flex-col gap-2'>
+              <div className='text-lg font-semibold'>A. Sydney</div>
+              <div className='text-sm text-muted-foreground'>25%</div>
             </div>
-            <div className="bg-red-100 border-2 border-red-500 rounded-lg p-4 flex flex-col gap-2">
-              <div className="text-lg font-semibold">B. Melbourne</div>
-              <div className="text-sm text-muted-foreground">15%</div>
+            <div className='bg-red-100 border-2 border-red-500 rounded-lg p-4 flex flex-col gap-2'>
+              <div className='text-lg font-semibold'>B. Melbourne</div>
+              <div className='text-sm text-muted-foreground'>15%</div>
             </div>
-            <div className="bg-green-100 border-2 border-green-500 rounded-lg p-4 flex flex-col gap-2">
-              <div className="text-lg font-semibold">C. Canberra</div>
-              <div className="text-sm text-muted-foreground">50%</div>
+            <div className='bg-green-100 border-2 border-green-500 rounded-lg p-4 flex flex-col gap-2'>
+              <div className='text-lg font-semibold'>C. Canberra</div>
+              <div className='text-sm text-muted-foreground'>50%</div>
             </div>
-            <div className="bg-red-100 border-2 border-red-500 rounded-lg p-4 flex flex-col gap-2">
-              <div className="text-lg font-semibold">D. Brisbane</div>
-              <div className="text-sm text-muted-foreground">10%</div>
+            <div className='bg-red-100 border-2 border-red-500 rounded-lg p-4 flex flex-col gap-2'>
+              <div className='text-lg font-semibold'>D. Brisbane</div>
+              <div className='text-sm text-muted-foreground'>10%</div>
             </div>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 gap-6">
-          <div className="bg-background rounded-lg p-4 flex flex-col gap-2">
-            <div className="text-sm text-muted-foreground">Participants</div>
-            <div className="text-3xl font-bold">1,234</div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex flex-col gap-2">
-            <div className="text-sm text-muted-foreground">Current Question</div>
-            <div className="text-3xl font-bold">12</div>
-          </div>
-          <div className="bg-background rounded-lg p-4 flex flex-col gap-2">
-            <div className="text-sm text-muted-foreground">Progress</div>
-            <div className="text-3xl font-bold">75%</div>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-6">
-          <div className="bg-background rounded-lg p-6">
-            <h4 className="text-xl font-semibold mb-4">Answer Distribution</h4>
-            <div className="aspect-[16/9] bg-gray-200">Bar Chart Placeholder</div>
+        <div className='grid grid-cols-3 gap-6'>
+          <div className='bg-background rounded-lg p-4 flex flex-col gap-2'>
+            <div className='text-sm text-muted-foreground'>Participants</div>
+            <div className='text-3xl font-bold'>1,234</div>
           </div>
-          <div className="bg-background rounded-lg p-6">
-            <h4 className="text-xl font-semibold mb-4">Correct vs Incorrect</h4>
-            <div className="aspect-square bg-gray-200">Pie Chart Placeholder</div>
+          <div className='bg-background rounded-lg p-4 flex flex-col gap-2'>
+            <div className='text-sm text-muted-foreground'>
+              Current Question
+            </div>
+            <div className='text-3xl font-bold'>12</div>
+          </div>
+          <div className='bg-background rounded-lg p-4 flex flex-col gap-2'>
+            <div className='text-sm text-muted-foreground'>Progress</div>
+            <div className='text-3xl font-bold'>75%</div>
           </div>
         </div>
-        <div className="bg-background rounded-lg p-6">
-          <h4 className="text-xl font-semibold mb-4">Participants Over Time</h4>
-          <div className="aspect-[16/9] bg-gray-200">Line Chart Placeholder</div>
+        <div className='grid grid-cols-2 gap-6'>
+          <div className='bg-background rounded-lg p-6'>
+            <h4 className='text-xl font-semibold mb-4'>Answer Distribution</h4>
+            <div className='aspect-[16/9] bg-gray-200'>
+              Bar Chart Placeholder
+            </div>
+          </div>
+          <div className='bg-background rounded-lg p-6'>
+            <h4 className='text-xl font-semibold mb-4'>Correct vs Incorrect</h4>
+            <div className='aspect-square bg-gray-200'>
+              Pie Chart Placeholder
+            </div>
+          </div>
+        </div>
+        <div className='bg-background rounded-lg p-6'>
+          <h4 className='text-xl font-semibold mb-4'>Participants Over Time</h4>
+          <div className='aspect-[16/9] bg-gray-200'>
+            Line Chart Placeholder
+          </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 // function BarChart(props) {
@@ -122,7 +132,6 @@ export default function Component() {
 //     </div>
 //   )
 // }
-
 
 // function LineChart(props) {
 //   return (
@@ -196,7 +205,6 @@ export default function Component() {
 //     </div>
 //   )
 // }
-
 
 // function PieChart(props) {
 //   return (
