@@ -4,7 +4,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prisma:format": "prisma format"
   },
   "dependencies": {
     "@prisma/client": "^5.15.1",

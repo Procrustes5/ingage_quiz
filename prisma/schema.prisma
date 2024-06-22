@@ -9,6 +9,76 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Users {
+  id   Int    @id @default(autoincrement())
+  Name String
+
+  RoomParticipants RoomParticipants[]
+  UserChoices      UserChoices[]
+  Rooms            Rooms[]
+}
+
+model RoomParticipants {
+  id      Int @id @default(autoincrement())
+  user_id Int
+  room_id Int
+
+  user Users @relation(fields: [user_id], references: [id])
+  room Rooms @relation(fields: [room_id], references: [id])
+}
+
+model Rooms {
+  id         Int    @id @default(autoincrement())
+  name       String
+  created_by Int
+
+  RoomParticipants RoomParticipants[]
+  RoomStatus       RoomStatus[]
+  Quizzes          Quizzes[]
+
+  user Users @relation(fields: [created_by], references: [id])
+}
+
+model RoomStatus {
+  id               Int      @id @default(autoincrement())
+  room_id          Int
+  on_going_quiz_id Int
+  is_answerable    Boolean
+  finish_on        DateTime
+
+  room Rooms @relation(fields: [room_id], references: [id])
+}
+
+model Quizzes {
+  id                Int    @id @default(autoincrement())
+  room_id           Int
+  order             Int
+  correct_choice_id Int
+  text              String
+
+  room    Rooms     @relation(fields: [room_id], references: [id])
+  choices Choices[]
+}
+
+model Choices {
+  id      Int    @id @default(autoincrement())
+  quiz_id Int
+  content String
+
+  quiz        Quizzes       @relation(fields: [quiz_id], references: [id])
+  UserChoices UserChoices[]
+}
+
+model UserChoices {
+  id        Int @id @default(autoincrement())
+  user_id   Int
+  choice_id Int
+
+  user   Users   @relation(fields: [user_id], references: [id])
+  choice Choices @relation(fields: [choice_id], references: [id])
 }
