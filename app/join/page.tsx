@@ -1,4 +1,4 @@
-export default function Join {
+export default function Join() {
   return (
     <div></div>
   )

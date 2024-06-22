@@ -1,4 +1,4 @@
-export default function MasterHome {
+export default function MasterHome() {
   return (
     <div></div>
   )

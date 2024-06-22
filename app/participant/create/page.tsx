@@ -1,4 +1,4 @@
-export default function ParticipantCreate {
+export default function ParticipantCreate() {
   return (
     <div></div>
   )

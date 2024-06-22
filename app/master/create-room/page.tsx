@@ -1,4 +1,4 @@
-export default function MasterCreateRoom {
+export default function MasterCreateRoom() {
   return (
     <div></div>
   )
