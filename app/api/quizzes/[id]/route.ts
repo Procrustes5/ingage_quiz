@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { type NextRequest, NextResponse } from "next/server";
 
 type QuizzParam = {
-  id: number;
+  id: string;
 };
 
 export async function GET(
@@ -12,7 +12,7 @@ export async function GET(
   const { id } = params;
 
   const quizData = await prisma.quizzes.findUnique({
-    where: { id },
+    where: { id: Number.parseInt(id, 10) },
   });
 
   return NextResponse.json(quizData);
@@ -26,7 +26,7 @@ export async function PUT(
 
   const body = await request.json();
   const updatedQuiz = await prisma.quizzes.update({
-    where: { id },
+    where: { id: Number.parseInt(id, 10) },
     data: body,
   });
 
@@ -40,7 +40,7 @@ export async function DELETE(
   const { id } = params;
 
   await prisma.quizzes.delete({
-    where: { id },
+    where: { id: Number.parseInt(id, 10) },
   });
 
   return NextResponse.json({ message: "Quiz deleted" });

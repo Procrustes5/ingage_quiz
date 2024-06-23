@@ -2,7 +2,7 @@ import { prisma } from "@/lib/prisma";
 import { type NextRequest, NextResponse } from "next/server";
 
 type RoomParam = {
-  id: number;
+  id: string;
 };
 
 export async function GET(
@@ -12,7 +12,7 @@ export async function GET(
   const { id } = params;
 
   const roomData = await prisma.rooms.findUnique({
-    where: { id },
+    where: { id: Number.parseInt(id, 10) },
   });
 
   return NextResponse.json(roomData);
@@ -26,7 +26,7 @@ export async function PUT(
 
   const body = await request.json();
   const updatedRoom = await prisma.rooms.update({
-    where: { id },
+    where: { id: Number.parseInt(id, 10) },
     data: body,
   });
 
@@ -40,7 +40,7 @@ export async function DELETE(
   const { id } = params;
 
   await prisma.rooms.delete({
-    where: { id },
+    where: { id: Number.parseInt(id, 10) },
   });
 
   return NextResponse.json({ message: "Room deleted" });
