@@ -5,6 +5,16 @@ type RoomParam = {
   id: string;
 };
 
+export type RoomDetails = {
+  name: string;
+  questions: {
+    id: string;
+    text: string;
+    options: string[];
+    correctOption: number;
+  }[];
+};
+
 export async function GET(
   _request: NextRequest,
   { params }: { params: RoomParam }
@@ -13,9 +23,35 @@ export async function GET(
 
   const roomData = await prisma.rooms.findUnique({
     where: { id: Number.parseInt(id, 10) },
+    include: {
+      RoomParticipants: {
+        include: {
+          user: true,
+        },
+      },
+      Quizzes: {
+        include: {
+          choices: true,
+        },
+      },
+    },
   });
 
-  return NextResponse.json(roomData);
+  if (!roomData) {
+    return NextResponse.json({ error: "Room not found" }, { status: 404 });
+  }
+
+  const roomDetails: RoomDetails = {
+    name: roomData.name,
+    questions: roomData.Quizzes.map((quiz) => ({
+      id: quiz.id.toString(),
+      text: quiz.text,
+      options: quiz.choices.map((choice) => choice.content),
+      correctOption: quiz.correct_choice_id, // Adjust based on your actual schema
+    })),
+  };
+
+  return NextResponse.json(roomDetails);
 }
 
 export async function PUT(
