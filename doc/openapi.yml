@@ -1,0 +1,325 @@
+openapi: 3.0.0
+info:
+  title: Quiz API
+  description: API documentation for the Quiz application
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+tags:
+  - name: Users
+    description: Endpoints related to user management
+  - name: Rooms
+    description: Endpoints related to room management
+  - name: Quizzes
+    description: Endpoints related to quiz management
+  - name: Choices
+    description: Endpoints related to user choices
+  - name: RoomStatus
+    description: Endpoints related to room status
+paths:
+  /api/users:
+    get:
+      tags:
+        - Users
+      summary: Retrieve a list of users
+      responses:
+        '200':
+          description: A list of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+    post:
+      tags:
+        - Users
+      summary: Create a new user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+  /api/users/{userId}:
+    get:
+      tags:
+        - Users
+      summary: Retrieve a specific user
+      parameters:
+        - in: path
+          name: userId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A specific user
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+  /api/rooms:
+    post:
+      tags:
+        - Rooms
+      summary: Create a new room
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                created_by:
+                  type: integer
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  created_by:
+                    type: integer
+    get:
+      tags:
+        - Rooms
+      summary: Retrieve a list of rooms
+      responses:
+        '200':
+          description: A list of rooms
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    created_by:
+                      type: integer
+  /api/rooms/{roomId}:
+    get:
+      tags:
+        - Rooms
+      summary: Retrieve a specific room
+      parameters:
+        - in: path
+          name: roomId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A specific room
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  created_by:
+                    type: integer
+  /api/quizzes:
+    post:
+      tags:
+        - Quizzes
+      summary: Create a new quiz
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                room_id:
+                  type: integer
+                order:
+                  type: integer
+                correct_choice_id:
+                  type: integer
+                text:
+                  type: string
+                choices:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      content:
+                        type: string
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  room_id:
+                    type: integer
+                  order:
+                    type: integer
+                  correct_choice_id:
+                    type: integer
+                  text:
+                    type: string
+                  choices:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        content:
+                          type: string
+  /api/quizzes/{quizId}:
+    get:
+      tags:
+        - Quizzes
+      summary: Retrieve a specific quiz
+      parameters:
+        - in: path
+          name: quizId
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A specific quiz
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  room_id:
+                    type: integer
+                  order:
+                    type: integer
+                  correct_choice_id:
+                    type: integer
+                  text:
+                    type: string
+                  choices:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        content:
+                          type: string
+  /api/user-choices:
+    post:
+      tags:
+        - Choices
+      summary: Submit a user choice
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                choice_id:
+                  type: integer
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  user_id:
+                    type: integer
+                  choice_id:
+                    type: integer
+  /api/room-status/{roomId}:
+    put:
+      tags:
+        - RoomStatus
+      summary: Update room status
+      parameters:
+        - in: path
+          name: roomId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                on_going_quiz_id:
+                  type: integer
+                is_answerable:
+                  type: boolean
+                finish_on:
+                  type: string  # ISO 8601 format
+      responses:
+        '200':
+          description: Updated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  room_id:
+                    type: integer
+                  on_going_quiz_id:
+                    type: integer
+                  is_answerable:
+                    type: boolean
+                  finish_on:
+                    type: string

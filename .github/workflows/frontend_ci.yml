@@ -31,4 +31,7 @@ jobs:
       run: npm run format
 
     - name: Build project
+      env:
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        DIRECT_URL: ${{ secrets.DIRECT_URL }}
       run: npm run build
