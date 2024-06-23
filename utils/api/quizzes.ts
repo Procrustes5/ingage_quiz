@@ -6,7 +6,7 @@ export const fetchQuizzes = async () => {
   return response.json();
 };
 
-export const createQuiz = async (quizData: any) => {
+export const createQuiz = async (quizData: unknown) => {
   const response = await fetch("/api/quizzes", {
     method: "POST",
     headers: {
@@ -20,7 +20,7 @@ export const createQuiz = async (quizData: any) => {
   return response.json();
 };
 
-export const updateQuiz = async (quizId: string, quizData: any) => {
+export const updateQuiz = async (quizId: string, quizData: unknown) => {
   const response = await fetch(`/api/quizzes/${quizId}`, {
     method: "PUT",
     headers: {

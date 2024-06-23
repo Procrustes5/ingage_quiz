@@ -6,7 +6,7 @@ type UserParam = {
 };
 
 export async function GET(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: UserParam }
 ) {
   const { id } = params;
@@ -34,7 +34,7 @@ export async function PUT(
 }
 
 export async function DELETE(
-  request: NextRequest,
+  _request: NextRequest,
   { params }: { params: UserParam }
 ) {
   const { id } = params;

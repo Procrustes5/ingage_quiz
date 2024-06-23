@@ -6,7 +6,7 @@ export const fetchUsers = async () => {
   return response.json();
 };
 
-export const createUser = async (userData: any) => {
+export const createUser = async (userData: unknown) => {
   const response = await fetch("/api/users", {
     method: "POST",
     headers: {
@@ -20,7 +20,7 @@ export const createUser = async (userData: any) => {
   return response.json();
 };
 
-export const updateUser = async (userId: string, userData: any) => {
+export const updateUser = async (userId: string, userData: unknown) => {
   const response = await fetch(`/api/users/${userId}`, {
     method: "PUT",
     headers: {

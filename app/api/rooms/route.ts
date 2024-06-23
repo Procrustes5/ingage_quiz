@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
   const newRoom = await prisma.rooms.create({
     data: {
       name,
+      // biome-ignore lint/style/useNamingConvention: <explanation>
       created_by: Number.parseInt(user.id, 10),
     },
   });

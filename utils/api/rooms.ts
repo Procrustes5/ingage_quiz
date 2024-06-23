@@ -6,7 +6,7 @@ export const fetchRooms = async () => {
   return response.json();
 };
 
-export const createRoom = async (roomData: any) => {
+export const createRoom = async (roomData: unknown) => {
   const response = await fetch("/api/rooms", {
     method: "POST",
     headers: {
@@ -20,7 +20,7 @@ export const createRoom = async (roomData: any) => {
   return response.json();
 };
 
-export const updateRoom = async (roomId: string, roomData: any) => {
+export const updateRoom = async (roomId: string, roomData: unknown) => {
   const response = await fetch(`/api/rooms/${roomId}`, {
     method: "PUT",
     headers: {
