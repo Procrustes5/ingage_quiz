@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-
 // biome-ignore lint/correctness/noNodejsModules: <explanation>
-const path = require("node:path");
+// biome-ignore lint/style/useNodejsImportProtocol: <explanation>
+const path = require("path");
 
 const nextConfig = {
   webpack: (config) => {
