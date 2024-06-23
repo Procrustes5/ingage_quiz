@@ -1,5 +1,5 @@
-import Footer from '@/components/common/Footer.tsx'
-import Header from '@/components/common/Header.tsx'
+import Footer from '@/components/common/Footer'
+import Header from '@/components/common/Header'
 import { GeistSans } from 'geist/font/sans'
 import './globals.css'
 import { Providers } from './provider'
