@@ -1,3 +1,7 @@
+import { RoomDetails } from "@/app/api/rooms/[id]/route";
+
+const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001";
+
 export const fetchRooms = async () => {
   const response = await fetch("/api/rooms");
   if (!response.ok) {
@@ -35,11 +39,20 @@ export const updateRoom = async (roomId: string, roomData: unknown) => {
 };
 
 export const deleteRoom = async (roomId: string) => {
-  const response = await fetch(`/api/rooms/${roomId}`, {
+  const response = await fetch(`${baseUrl}/api/rooms/${roomId}`, {
     method: "DELETE",
   });
   if (!response.ok) {
     throw new Error("Failed to delete room");
+  }
+  return response.json();
+};
+
+// Fetch room by ID function
+export const fetchRoomById = async (roomId: string): Promise<RoomDetails> => {
+  const response = await fetch(`${baseUrl}/api/rooms/${roomId}`);
+  if (!response.ok) {
+    throw new Error("Failed to fetch room by ID");
   }
   return response.json();
 };
