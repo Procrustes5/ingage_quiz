@@ -4,49 +4,11 @@
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
 'use client'
-
-import Link from 'next/link'
 import type { SVGProps } from 'react'
 
 export default function MasterIndex() {
   return (
     <div className='flex flex-col h-screen'>
-      <header className='bg-background border-b flex items-center justify-between px-6 py-4'>
-        <Link href='#' className='flex items-center gap-2' prefetch={false}>
-          <GamepadIcon className='w-6 h-6' />
-          <span className='text-lg font-bold'>Quiz App</span>
-        </Link>
-        <nav className='flex items-center gap-4'>
-          <Link
-            href='#'
-            className='text-sm font-medium transition-colors hover:text-primary'
-            prefetch={false}
-          >
-            Dashboard
-          </Link>
-          <Link
-            href='#'
-            className='text-sm font-medium transition-colors hover:text-primary'
-            prefetch={false}
-          >
-            Create Room
-          </Link>
-          <Link
-            href='#'
-            className='text-sm font-medium transition-colors hover:text-primary'
-            prefetch={false}
-          >
-            Manage Rooms
-          </Link>
-          <Link
-            href='#'
-            className='text-sm font-medium transition-colors hover:text-primary'
-            prefetch={false}
-          >
-            Settings
-          </Link>
-        </nav>
-      </header>
       <main className='flex-1 p-8'>
         <div className='mb-8'>
           <h1 className='text-2xl font-bold'>Welcome, Game Master!</h1>
