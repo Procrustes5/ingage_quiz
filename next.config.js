@@ -9,7 +9,6 @@ const nextConfig = {
       ...config.resolve.alias,
       "@": path.resolve(__dirname),
     };
-    console.log("Webpack: ", config.resolve.alias);
     return config;
   },
 };
