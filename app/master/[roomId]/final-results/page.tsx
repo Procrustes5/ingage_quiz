@@ -1,3 +1,5 @@
+import { SnowflakeIcon } from '@/components/ui/icons'
+
 export default function Component() {
   return (
     <div className='min-h-screen bg-background'>
