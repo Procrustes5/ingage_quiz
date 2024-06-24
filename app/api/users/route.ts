@@ -1,10 +1,10 @@
-import { prisma } from "@/lib/prisma";
+import { prisma } from '@/lib/prisma'
 // app/api/users/route.ts
-import { type NextRequest, NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from 'next/server'
 
 export async function GET(_request: NextRequest) {
   // Prismaを使ったデータベースクエリ
-  const users = await prisma.users.findMany();
+  const users = await prisma.users.findMany()
 
-  return NextResponse.json(users);
+  return NextResponse.json(users)
 }

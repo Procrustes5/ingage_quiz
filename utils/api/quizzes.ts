@@ -1,45 +1,45 @@
 export const fetchQuizzes = async () => {
-  const response = await fetch("/api/quizzes");
+  const response = await fetch('/api/quizzes')
   if (!response.ok) {
-    throw new Error("Failed to fetch quizzes");
+    throw new Error('Failed to fetch quizzes')
   }
-  return response.json();
-};
+  return response.json()
+}
 
 export const createQuiz = async (quizData: unknown) => {
-  const response = await fetch("/api/quizzes", {
-    method: "POST",
+  const response = await fetch('/api/quizzes', {
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(quizData),
-  });
+  })
   if (!response.ok) {
-    throw new Error("Failed to create quiz");
+    throw new Error('Failed to create quiz')
   }
-  return response.json();
-};
+  return response.json()
+}
 
 export const updateQuiz = async (quizId: string, quizData: unknown) => {
   const response = await fetch(`/api/quizzes/${quizId}`, {
-    method: "PUT",
+    method: 'PUT',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(quizData),
-  });
+  })
   if (!response.ok) {
-    throw new Error("Failed to update quiz");
+    throw new Error('Failed to update quiz')
   }
-  return response.json();
-};
+  return response.json()
+}
 
 export const deleteQuiz = async (quizId: string) => {
   const response = await fetch(`/api/quizzes/${quizId}`, {
-    method: "DELETE",
-  });
+    method: 'DELETE',
+  })
   if (!response.ok) {
-    throw new Error("Failed to delete quiz");
+    throw new Error('Failed to delete quiz')
   }
-  return response.json();
-};
+  return response.json()
+}
