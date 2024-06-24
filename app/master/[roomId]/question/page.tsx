@@ -8,13 +8,21 @@ export default function Component() {
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
-        const response = await fetch('/api/quizzes/1'); // IDを適切に変更する
-        if (!response.ok) {
+        // room-status/1からon_going_quiz_idを取得
+        const roomStatusResponse = await fetch('/api/room-status/1');
+        if (!roomStatusResponse.ok) {
           throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        console.log('Fetched data:', data); // デバッグ用ログ
-        setQuestion(data.text); // データの構造に応じてプロパティ名を変更
+        const roomStatusData = await roomStatusResponse.json();
+        const quizId = roomStatusData.on_going_quiz_id;
+
+        // on_going_quiz_idを使用してquizzesから質問を取得
+        const quizResponse = await fetch(`/api/quizzes/${quizId}`);
+        if (!quizResponse.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const quizData = await quizResponse.json();
+        setQuestion(quizData.text); // データの構造に応じてプロパティ名を変更
       } catch (error) {
         console.error('Failed to fetch question', error);
       }
