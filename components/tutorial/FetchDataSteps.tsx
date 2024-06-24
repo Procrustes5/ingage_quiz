@@ -1,5 +1,5 @@
-import Step from './Step'
 import Code from './Code'
+import Step from './Step'
 
 const create = `
 create table notes (
